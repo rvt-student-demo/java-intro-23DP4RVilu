@@ -8,25 +8,19 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Give the first number:");
-        int first = Integer.valueOf(scanner.nextLine());
+        System.out.println("Give speed: ");
+        int speed = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Give the second number:");
-        int second = Integer.valueOf(scanner.nextLine());
+        if (speed > 120) {
+            System.out.println("Speeding Ticket!");
+        }
 
-        System.out.println("Answers are: ");
-
-        Integer result1 = first + second;
-        System.out.println(first + " + " + second + " = " + result1);
-
-        Integer result2 = first - second;
-        System.out.println(first + " - " + second + " = " + result2);
-
-        Integer reslt3 = first * second;
-        System.out.println(first + " * " + second + " = " + reslt3);
-
-        double result4 = (double) first / second;
-        System.out.println(first + " / " + second + " = " + result4);
-         
+        if (speed == 120) {
+            System.out.println("Speeding Ticket!");
+        }
+        else {
+            System.out.println("No Ticket.");
+        }
     }
+    
 }
