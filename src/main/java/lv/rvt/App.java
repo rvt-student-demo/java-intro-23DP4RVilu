@@ -27,6 +27,6 @@ public class App
 
         double result4 = (double) first / second;
         System.out.println(first + " / " + second + " = " + result4);
-        
+         
     }
 }
