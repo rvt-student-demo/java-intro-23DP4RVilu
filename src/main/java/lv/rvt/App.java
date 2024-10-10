@@ -9,23 +9,16 @@ public class App
     {
 
     Scanner scanner = new Scanner(System.in);
-        int sum = 0;
-        int amt = 0;
 
-        while (true) {
-            System.out.println("Give a number: ");
+        System.out.println("Give a number: ");
+        Integer number = Integer.valueOf(scanner.nextLine());
 
-            Integer number = Integer.valueOf(scanner.nextLine());
+        int start = number;
+        int end = 101;
+        for (int i = start; i < end; i++) {
+            System.out.println(i);
+            }
 
-            if (number == 0) {
-                System.out.println("Number of numbers: " + amt );
-                    System.out.println("Sum of the numbers: " + sum);
-                        break;
-                }
-                else {
-                    sum = sum + number;
-                    amt = amt + 1;
-                }
         }
-    }
 }
+
