@@ -11,14 +11,15 @@ public class App
     Scanner scanner = new Scanner(System.in);
 
         System.out.println("Give a number: ");
-        Integer number = Integer.valueOf(scanner.nextLine());
 
-        int start = number;
-        int end = 101;
-        for (int i = start; i < end; i++) {
+        Integer num = Integer.valueOf(scanner.nextLine());
+        
+        int fact = 1;
+    
+        for (int i = 1; i <= num; i++) {
+            fact = i * fact;
             System.out.println(i);
-            }
-
         }
+    }
 }
 
