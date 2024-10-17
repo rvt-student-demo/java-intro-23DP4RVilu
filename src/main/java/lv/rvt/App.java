@@ -4,23 +4,19 @@ import java.util.*;
 
 public class App 
 {
-    public static void main( String[] args )
 
-    {
+    public static void main(String[] args) {
+        divisibleByThreeInRange(2, 10);
+    
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Give a number: ");
-        Integer number = Integer.valueOf(scanner.nextLine());
-        int times = 1;
-
-        while (times <= number) {
-            printText();
-            times++;
-        }
-
     }
 
-    public static void printText() {
-        System.out.println("In a hole in the ground there lived a method");
+    public static void divisibleByThreeInRange(int beginning, int end)
+    {
+    for (int iteration = beginning; iteration <= end; iteration++){
+        if(iteration % 3 == 0) {
+            System.out.println(iteration);
+        }
+    }  
     }
 }
