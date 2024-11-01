@@ -4,27 +4,38 @@ import java.util.*;
 
 public class App {
     
-  public static void main ( String[] args )
-  {
-    int[] val = {0, 1, 2, 3}; 
-    int temp;
-   
-    System.out.println( "Original Array: " 
-        + val[0] + " " + val[1] + " " + val[2] + " " + val[3] );
-   
-    // reverse the order of the numbers in the array
-   for (int i = 0; i < val.length; i++) {
-    System.out.println(val[i]); 
-   }
-  
-    System.out.println( "Reversed Array: " 
-        + val[0] + " " + val[1] + " " + val[2] + " " + val[3] );
+  public static void main ( String[] args ) {
+    Scanner scanner = new Scanner (System.in);
 
-    for (int i = val.length-1; i >= 0; i--){
-      System.out.println(val[i]);
-    }         
-  }
-}  
+    String name = "";
+    String longestName = "";
+    int sum = 0;
+    int count = 0;
+
+    while (true) {
+      String input = scanner.nextLine();
+      if (input.equals("")) {
+        break;
+      }
+
+      String[] data = input.split(",");
+      name = data[0];
+      if (name.length() > longestName.length()) {
+        longestName = name;
+      }
+
+      for (int i = 0; i < data.length; i++) {
+        sum = sum + Integer.valueOf(data[1]);
+        count++;
+      }
+
+    }
+    double average = (1.0 * sum / count);
+    System.out.println("Longest name: " + longestName);
+    System.out.println("Average of birth years: " + average);
+    }
+}
+  
 
 
 
