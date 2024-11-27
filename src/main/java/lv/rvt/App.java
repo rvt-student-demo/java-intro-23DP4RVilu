@@ -1,30 +1,42 @@
 package lv.rvt;
 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
-        // Scanner scanner = new Scanner(System.in);
 
-        // Here you can write code to test that PaymentCard works as intended
-        // be sure to erase the extra code for the last part of the exercise!
-        PaymentCard paulsCard = new PaymentCard(20);
-        PaymentCard mattsCard = new PaymentCard(30);
-        
-        paulsCard.eatHeartily();
-        mattsCard.eatAffordably();
-        System.out.println("Paul: " + paulsCard);
-        System.out.println("Matt: " + mattsCard);
-        paulsCard.addMoney(20.00);
-        mattsCard.eatHeartily();
-        System.out.println("Paul: " + paulsCard);
-        System.out.println("Matt: " + mattsCard);
-        paulsCard.eatAffordably();
-        paulsCard.eatAffordably();
-        mattsCard.addMoney(50);
-        System.out.println("Paul: " + paulsCard);
-        System.out.println("Matt: " + mattsCard);
-        
-        
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> books = new ArrayList<>();
 
+        while (true) {
+            System.out.println("Title: ");
+            String title = scanner.nextLine();
+
+            if (title.isEmpty()) {
+                break;
+            }
+
+            System.out.println("Pages: ");
+            int pages = Integer.valueOf(scanner.nextLine());
+
+            System.out.println("Publication year: ");
+            int year = Integer.valueOf(scanner.nextLine());
+
+            books.add(new Book(title, pages, year));
+        }
+
+        System.out.println("What information will be printed? ");
+        String information = scanner.nextLine();
+
+        for (Book book : books) {
+            if (information.equals("everything")) {
+                System.out.println(book);
+            } else if (information.equals("name")) {
+                System.out.println(book.getTitle());
+            }
+        }
     }
 }
