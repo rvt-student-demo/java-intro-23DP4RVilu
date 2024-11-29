@@ -1,42 +1,24 @@
 package lv.rvt;
 
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class App {
-
     public static void main(String[] args) {
+        HealthStation childrensHospital = new HealthStation();
 
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Book> books = new ArrayList<>();
-
-        while (true) {
-            System.out.println("Title: ");
-            String title = scanner.nextLine();
-
-            if (title.isEmpty()) {
-                break;
-            }
-
-            System.out.println("Pages: ");
-            int pages = Integer.valueOf(scanner.nextLine());
-
-            System.out.println("Publication year: ");
-            int year = Integer.valueOf(scanner.nextLine());
-
-            books.add(new Book(title, pages, year));
-        }
-
-        System.out.println("What information will be printed? ");
-        String information = scanner.nextLine();
-
-        for (Book book : books) {
-            if (information.equals("everything")) {
-                System.out.println(book);
-            } else if (information.equals("name")) {
-                System.out.println(book.getTitle());
-            }
-        }
+        Person ethan = new Person("Ethan", 1, 110, 7);
+        Person peter = new Person("Peter", 33, 176, 85);
+    
+        System.out.println("weighings performed: " + childrensHospital.weighings());
+    
+        childrensHospital.weigh(ethan);
+        childrensHospital.weigh(peter);
+    
+        System.out.println("weighings performed: " + childrensHospital.weighings());
+    
+        childrensHospital.weigh(ethan);
+        childrensHospital.weigh(ethan);
+        childrensHospital.weigh(ethan);
+        childrensHospital.weigh(ethan);
+    
+        System.out.println("weighings performed: " + childrensHospital.weighings());
     }
 }
