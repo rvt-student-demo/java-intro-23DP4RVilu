@@ -1,19 +1,22 @@
 package lv.rvt;
 
-public class Book implements packable{
+public class Book implements packable {
+	private String author;
+	private String name;
+	private Double weight;
 
-    public Book(String string, String string2, Double i) {
+	public Book(String author, String name, double weight) {
+		this.author=author;
+		this.name=name;
+		this.weight= weight;
+	}
 
-    }
+	public double weight(){
+		return this.weight;
+	};
 
-    public Book(String string, String string2, int i) {
-
-    }
-
-    @Override
-    public double weight() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'weight'");
-    }
-    
+	@Override
+	public String toString() {
+		return this.author + ": " + this.name;
+	}
 }

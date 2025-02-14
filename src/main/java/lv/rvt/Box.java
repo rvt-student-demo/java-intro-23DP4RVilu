@@ -1,29 +1,34 @@
 package lv.rvt;
 
+import java.util.ArrayList;
 
-public class Box {
-  double width;
-  double height;
-  double length;
-  
-    
-    public Box (double width, double height, double length) {
-    this.width = width;
-    this.height = height;
-    this.length = length;
-    }
+public class Box implements packable {
+	private double capacity;
+	private ArrayList<packable> items;
 
-    public Box (double side) {
-    this.width = side;
-    this.height = side;
-    this.length = side;
-    }
+	public Box(double capacity) {
+		this.capacity=capacity;
+		items = new ArrayList<>();
+	}
 
-    public double volume() {
-    return width * height * length;
-    }
 
-  public double area() {
-  return 2 * (length * width + length * height + width * height);
-  }
+	public void add(packable item) {
+		if (this.capacity >= item.weight()) {
+			items.add(item);
+			this.capacity -= item.weight();
+		}
+	}
+
+	public double weight() {
+		double weight = 0;
+		for (packable item: items) {
+			weight += item.weight();
+		}
+		return weight;
+	}
+
+	@Override
+	public String toString() {
+		return "Box: " + items.size() + " items, total weight " + weight() + " kg";
+	}
 }
